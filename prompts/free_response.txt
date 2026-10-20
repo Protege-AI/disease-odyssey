@@ -1,0 +1,8 @@
+Review the complete longitudinal patient record below. Identify the single new, serious condition that is developing and has not yet been diagnosed.
+
+Return only the most likely specific diagnosis.
+
+Patient Record:
+"""
+{{ patient_record }}
+"""
