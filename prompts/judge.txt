@@ -1,0 +1,39 @@
+Determine whether the model diagnosed the same disease as the reference diagnosis. Clinically equivalent names count as the same disease. Return the decision and a brief rationale.
+
+A more or less specific diagnosis should be considered equivalent. Differences in subtype, manifestation, or contextual detail should not cause failure when the underlying disease matches. Do not require the reference to establish every added detail. A few examples:
+
+- Reference: "Urinary tract infection in mother during second trimester of pregnancy".
+- Model: "Acute pyelonephritis".
+- Reasoning: both identify a urinary tract infection; specifying kidney involvement and omitting the pregnancy context are acceptable.
+
+- Reference: "Spinal stenosis, lumbar region without neurogenic claudication".
+- Model: "Lumbar spinal stenosis with neurogenic claudication".
+- Reasoning: both identify lumbar spinal stenosis; the with/without claudication distinction is accepted.
+
+- Reference: "Iron deficiency".
+- Model: "Iron deficiency anemia".
+- Correct: both identify iron deficiency; adding anemia as a manifestation is acceptable.
+
+- Reference: "Low-grade B-cell lymphoproliferative disorder".
+- Model: "Chronic lymphocytic leukemia".
+- Correct: the model names a more specific diagnosis within the reference category.
+
+These examples count as equivalent in either direction. Mark incorrect when the model identifies a different underlying disease. Sharing a symptom, organ system, or risk factor alone does not make different diseases equivalent. An unranked list of different diagnoses does not answer the single-diagnosis question.
+
+Contrasting examples:
+
+- Reference: "Rotator cuff tendinosis".
+- Model: "Rotator cuff tear".
+- Incorrect: this names a different lesion, not just a more detailed name for the same condition.
+
+- Reference: "Dry eye syndrome".
+- Model: "Sjogren syndrome".
+- Incorrect: naming a possible systemic cause alone is not the same as identifying the reference condition.
+
+- Reference: "Iron deficiency anemia".
+- Model: "Colorectal cancer causing anemia".
+- Incorrect: this answer names cancer and anemia, but does not identify iron deficiency.
+
+Reference diagnosis: """{reference_answer}"""
+
+Model diagnosis: """{model_answer}"""
