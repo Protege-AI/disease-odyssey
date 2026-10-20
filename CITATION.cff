@@ -1,0 +1,8 @@
+cff-version: 1.2.0
+message: "If you use these prompts, please cite the Disease Odyssey blog post."
+title: "Disease Odyssey: Evaluating Pre-Diagnostic Reasoning on Longitudinal Clinical Records"
+authors:
+  - name: "Protege DataLab"
+date-released: 2026-10-21
+license: CC-BY-4.0
+type: dataset
